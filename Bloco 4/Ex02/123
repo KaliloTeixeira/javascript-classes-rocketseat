@@ -1,0 +1,25 @@
+var inputElement = document.querySelector('#app input[name=user]')
+
+const repos = [];
+
+function search(){
+    axios.get(`https://api.github.com/users/${inputElement.value}/repos`)
+        .then((response) =>{
+            repos = response.data;
+        })
+        .catch(() => {
+            alert(`Usuário não encontrado!`)
+        })
+}
+
+function renderRepos(){
+    var listElements = document.querySelector('#repos');
+
+    repos.forEach( repo => {
+        var listItem = document.createElement('li')
+        var textItem = document.createTextNode(${repo})
+    });
+
+}
+
+console.log(repos);

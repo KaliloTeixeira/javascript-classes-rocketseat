@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="listNames()">
+    <div class="box-content">
+
+        <input type="text" name="nome">
+        <button onClick="adicionar()" type="submit">Adicionar</button>
+
+        <ul id="list-of-names">
+
+        </ul>
+    </div>
+
+
+    <script>
+        var names = ["Diego", "Gabriel", "Lucas"];
+        var listOfNames = document.querySelector('#list-of-names')
+
+        names.forEach(name => {
+            var li = document.createElement('li')
+            var nameToShow = document.createTextNode(`${name}`)
+            li.appendChild(nameToShow)
+            listOfNames.appendChild(li)
+        })
+
+        function adicionar() {
+            var newName = document.querySelector('input[name=nome]')
+            var li = document.createElement('li')
+            var nameToShow = document.createTextNode(`${newName.value}`)
+            li.appendChild(nameToShow)
+            listOfNames.appendChild(li)
+        }
+    </script>
+
+</body>
+
+</html>

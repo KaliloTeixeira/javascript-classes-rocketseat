@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="nome">
+    </div>
+
+    <script>
+        // Criar um elemento html utilizando o JS
+        var linkElement = document.createElement('a')
+        linkElement.setAttribute('href', 'httsp://rocketseat.com.br')
+
+        // Criando elemento de texto
+        var textElement = document.createTextNode('Acessar rocketseat')
+
+        // appendChild adiciona o elemento passado por parametro como filho do elemento
+        linkElement.appendChild(textElement)
+
+        // posicionando elemento criado para no html
+        var containerElement = document.querySelector('div#app')
+        containerElement.appendChild(linkElement)
+
+        //Trabalhando com elementos já existente no html
+        var inputElement = document.querySelector( 'input#nome' )
+
+        //Removendo input através do javascrip
+        containerElement.removeChild(inputElement)
+
+    </script>
+    
+</body>
+</html>

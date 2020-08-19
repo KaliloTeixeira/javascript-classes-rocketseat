@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var usuarios = [
+            {
+            nome: "Diego",
+            habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+            nome: "Gabriel",
+            habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+
+        function print(usuarios){
+            for ( const user of usuarios)
+                console.log(`O ${user.nome} possui as Habilidades: ${user.habilidades.join(', ')}.`);
+        }
+
+        print(usuarios);
+
+
+    </script>
+</body>
+</html>

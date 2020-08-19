@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function temHabilidade(skills) {
+            // for(var i=0; i<skills.length; i++)
+            //     return (skills[i]=="Javascript") ? true : false;
+            position = skills.indexOf("Javascript");
+            
+            return (position>=0) ? true : false;
+
+        }
+        
+        var skills = ["Kalilo", "Javascript","ReactJS", "React Native"];
+        
+        console.log(temHabilidade(skills));  // true ou false
+
+    </script>
+    
+</body>
+</html>

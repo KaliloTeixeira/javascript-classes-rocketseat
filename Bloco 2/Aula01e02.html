@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="nome" id="nome" class="nome"></input>
+        <button class="botao">Adicionar</button>
+    </div>
+
+    <script>
+
+        //Funções getElement()
+        var inputElementById = document.getElementById('nome')
+        var inputElementByTag = document.getElementsByTagName('input')[0] /*Sempre retorna um array, se quiser um input específico, deve colocar o index do array.*/
+        var inputElementByClassName = document.getElementsByClassName('nome') /*Tambem sempre retorna um array*/
+
+        //Funções query()
+        var inputElementByQuery = document.querySelector(' div#app input ') /*a referenciação é feita como no CSS*/
+        var inputElementByQuery2 = document.querySelector(' input[name=nome] ') //os valores entre [] refencia uma propriedade do elemento html
+
+        //querySelector retorna só 1 elemento - o primeiro
+        //querySelectorAll retorna todos os elementos do tipo/classe
+        //querySelector é o que utilizaremos para pegar elementos do html
+        console.log(inputElementByQuery2)
+
+        // Funções onClick pelo Javascript
+        // Utilizando o querySelector
+        var inputValue = document.querySelector('input[name=nome]')
+        var btnELement = document.querySelector(' button.botao ')
+        btnELement.onclick = () => {alert('Voce escreveu: ' + inputValue.value)}
+
+
+    </script>
+
+</body>
+</html>

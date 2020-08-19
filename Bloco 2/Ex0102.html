@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box-container{
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .btn-container {
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+
+        .square-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .square-container div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box-container">
+        <div class="btn-container">
+            <button name="newSquareBtn" > Adicionar Quadrado</button>
+            <button name="removeSquareBtn"> Remover Quadrado</button>
+        </div>
+
+        <div class="square-container">
+        </div>
+
+    </div>
+
+    <script>
+        var squareCounter = 1;
+
+        var newSquareBtn = document.querySelector('button[name=newSquareBtn]')
+        newSquareBtn.onclick = () => createSquare();
+
+        var removeSquareBtn = document.querySelector('button[name=removeSquareBtn]')
+        removeSquareBtn.onclick = () => removeSquare();
+
+        var containerSquareQuery = document.querySelector('.square-container')
+
+        var squares;
+
+
+        function createSquare(){
+            var newElement = document.createElement('div')
+            newElement.setAttribute('id', `square${squareCounter}`)
+            newElement.setAttribute('class', 'square')
+            newElement.setAttribute('onmouseover', 'changeColor(event)')
+
+            squareCounter++
+            newElement.style.width = '100px'
+            newElement.style.height = '100px'
+            newElement.style.margin = '10px'
+            newElement.style.backgroundColor = 'red'            
+
+            containerSquareQuery.appendChild(newElement)
+        }
+
+        function removeSquare(){
+            var square = document.querySelector(`#square${squareCounter-1}`)
+            squareCounter--
+
+            containerSquareQuery.removeChild(square)
+        }
+
+        function changeColor(event){
+            var newColor = getRandomColor()
+            var square = document.querySelector(`#${event.target.id}`)
+            square.style.backgroundColor = `${newColor}`
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        
+
+    </script>
+</body>
+</html>
